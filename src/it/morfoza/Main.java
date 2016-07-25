@@ -4,8 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        int result = 2+2;
         System.out.println("Hello");
-        System.out.println("Eat a falafel");
-        System.out.println("Kupito");
+        System.out.println("your result is : "+result);
+
     }
 }
