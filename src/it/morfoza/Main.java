@@ -6,5 +6,6 @@ public class Main {
 	// write your code here
         System.out.println("Hejeczka");
         System.out.println("Falafel");
+        System.out.println("Kupito");
     }
 }
