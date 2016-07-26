@@ -31,7 +31,7 @@ public class Calcweb {
                         "</html>" };
 
         Spark.get("/contact", (request, response) -> {
-            return "<html>"
+            return "<html>" +
                         "<form action=\"/calculator\">" +
                         "<input name=\"number1\">" +
                         "<input name=\"number2\">" +
