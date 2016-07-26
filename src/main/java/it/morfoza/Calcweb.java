@@ -26,7 +26,7 @@ public class Calcweb {
             String number2 = request.queryParams("number2");
             return "<html>Hi, <b> buddy </b>! Your numbers:"
                         + number1 +
-                        ","
+                        ", "
                         + number2 +
                         "</html>";});
 
