@@ -15,7 +15,9 @@ public class Calcweb {
         }
 
         Spark.get("/hello", (request, response) -> {
-            return "<html> Hello <b> Buddy </b> </html>";
+            return "<html> Hello <b> Buddy </b> " +
+                    "Now you can do things!" +
+                    "</html>";
         });
 
 
