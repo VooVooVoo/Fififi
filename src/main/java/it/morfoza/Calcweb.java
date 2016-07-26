@@ -24,6 +24,12 @@ public class Calcweb {
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
+
+            int number1a = Integer.parseInt(number1);
+            int number2a = Integer.parseInt(number2);
+
+            int results = number1a + number2a
+
             return "<html>Hi, <b> buddy </b>! Your numbers:"
                         + number1 +
                         ", "
