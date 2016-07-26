@@ -28,7 +28,7 @@ public class Calcweb {
                         + number1 +
                         ","
                         + number2 +
-                        "</html>" };
+                        "</html>";});
 
         Spark.get("/contact", (request, response) -> {
             return "<html>" +
