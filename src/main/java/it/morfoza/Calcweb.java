@@ -1,6 +1,11 @@
 package it.morfoza;
 
+import spark.ModelAndView;
 import spark.Spark;
+import spark.template.freemarker.FreeMarkerEngine;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Wojt on 2016-07-25.
@@ -30,14 +35,12 @@ public class Calcweb {
 
             int result = number1a + number2a;
 
-            return "<html>Hi, <b> buddy </b>! Your numbers:"
-                        + number1
-                        + ", "
-                        + number2
-                        + "and the result is........"
-                        + result
-                        + "</html>";
-        });
+            Map<String, Object> model = new HashMap();
+            model.put("result", result);
+            model.put("number1", number1);
+            model.put("number2", number2);
+            return new ModelAndView(model, "result.ftl");
+        }, new FreeMarkerEngine());
 
         Spark.get("/contact", (request, response) -> {
             return "<html>" +
