@@ -28,13 +28,16 @@ public class Calcweb {
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
 
-            int results = number1a + number2a
+            int result = number1a + number2a;
 
             return "<html>Hi, <b> buddy </b>! Your numbers:"
-                        + number1 +
-                        ", "
-                        + number2 +
-                        "</html>";});
+                        + number1
+                        + ", "
+                        + number2
+                        + "and the result is........"
+                        + result
+                        + "</html>";
+        });
 
         Spark.get("/contact", (request, response) -> {
             return "<html>" +
