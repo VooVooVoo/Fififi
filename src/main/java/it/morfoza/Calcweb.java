@@ -14,12 +14,12 @@ public class Calcweb {
             Spark.port(portInt);
         }
 
-        Spark.get("/calc", (request, response) -> {
+        Spark.get("/hello", (request, response) -> {
             return "<html> Hello <b> Buddy </b> </html>";
         });
 
 
-        Spark.get("/contact", (request, response) -> {
+        Spark.get("/calculator", (request, response) -> {
                 return "<html> " +
                         "<form action=\"/calculator\">" +
                         "<input name=\"number1\">" +
