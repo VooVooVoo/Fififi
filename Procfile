@@ -1,1 +1,1 @@
-web: java -jar target/Calcweb.jar
+web: java -jar target/calcweb.jar
