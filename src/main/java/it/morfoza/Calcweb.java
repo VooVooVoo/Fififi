@@ -8,9 +8,15 @@ import spark.Spark;
 public class Calcweb {
 
     public static void main(String[] args) {
+        String port = System.getenv("PORT");
+        if (port !=null) {
+            int portInt = Integer.parseInt(port);
+            Spark.port(portInt);
+        }
 
         Spark.get("/calc", (request, response) -> {
-            return "<html> Hello <b> Buddy </b> </html>";});
+            return "<html> Hello <b> Buddy </b> </html>";
+        });
 
 
         Spark.get("/contact", (request, response) -> {

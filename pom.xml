@@ -19,17 +19,30 @@
             </configuration>
         </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
                 <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>Calcweb</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>it.morfoza.Main</mainClass>
+                            <mainClass>it.morfoza.Calcweb</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
-           </plugin>
+                <executions>
+                    <execution>
+                        <id>build-jar-with-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 
     </plugins>
@@ -40,6 +53,11 @@
         <artifactId>spark-core</artifactId>
         <version>2.5</version>
     </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.21</version>
+        </dependency>
     </dependencies>
 
 </project>
