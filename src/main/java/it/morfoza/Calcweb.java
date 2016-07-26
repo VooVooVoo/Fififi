@@ -22,7 +22,16 @@ public class Calcweb {
 
 
         Spark.get("/calculator", (request, response) -> {
-                return "<html> " +
+            String number1 = request.queryParams("number1");
+            String number2 = request.queryParams("number2");
+            return "<html>Hi, <b> buddy </b>! Your numbers:"
+                        + number1 +
+                        ","
+                        + number2 +
+                        "</html>" };
+
+        Spark.get("/contact", (request, response) -> {
+            return "<html>"
                         "<form action=\"/calculator\">" +
                         "<input name=\"number1\">" +
                         "<input name=\"number2\">" +
