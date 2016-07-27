@@ -6,6 +6,7 @@ import spark.template.freemarker.FreeMarkerEngine;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.jar.Attributes;
 
 /**
  * Created by Wojt on 2016-07-25.
@@ -52,6 +53,25 @@ public class Calcweb {
                             "</html>";
         });
         Spark.get("/user", (request, response) -> {
+            String name = request.queryParams("name");
+            String surname = request.queryParams("surname");
+            String userID = request.queryParams("userID");
+            String password = request.queryParams("password");
+
+            String name1 = String.valueOf(name);
+            String surname1 = String.valueOf(surname);
+            String userID1 = String.valueOf(userID);
+            String password1 = String.valueOf(password);
+
+            Map<String, Object> model = new HashMap();
+            model.put("Name", name1);
+            model.put("Surname", surname1);
+            model.put("UserID", userID1);
+            model.put("Password", password1);
+            return new ModelAndView(model, "User.ftl");
+        }, new FreeMarkerEngine());
+
+        Spark.get("/user", (request, response) -> {
                 return "<html>" +
                         "<form action=\"/user\">" +
                         "<input name=\"Name\">" +
@@ -62,7 +82,6 @@ public class Calcweb {
                         "</form>" +
                         "</html>";
         });
-
 
     }
 }
