@@ -43,14 +43,26 @@ public class Calcweb {
         }, new FreeMarkerEngine());
 
         Spark.get("/contact", (request, response) -> {
-            return "<html>" +
-                        "<form action=\"/calculator\">" +
-                        "<input name=\"number1\">" +
-                        "<input name=\"number2\">" +
+                    return "<html>" +
+                            "<form action=\"/calculator\">" +
+                            "<input name=\"number1\">" +
+                            "<input name=\"number2\">" +
+                            "<input type=\"submit\">" +
+                            "</form>" +
+                            "</html>";
+        });
+        Spark.get("/user", (request, response) -> {
+                return "<html>" +
+                        "<form action=\"/user\">" +
+                        "<input name=\"Name\">" +
+                        "<input name=\"Surname\">" +
+                        "<input name=\"User ID\">" +
+                        "<input name=\"Password\">" +
                         "<input type=\"submit\">" +
                         "</form>" +
                         "</html>";
         });
+
 
     }
 }
