@@ -1,0 +1,1 @@
+<html>Hi, <b>${name}</b> <b>${surname}</b>. <br>Your UserID is: <b>${id}</b> <br>and your password is: <b>${password}</b>.</html>

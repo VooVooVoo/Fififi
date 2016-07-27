@@ -18,6 +18,7 @@ public class Calcweb {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
+        Spark.staticFileLocation("/webfiles");
 
         Spark.get("/hello", (request, response) -> {
             return "<html> Hello <b> Buddy </b> <br/>" +
@@ -51,18 +52,25 @@ public class Calcweb {
                             "</form>" +
                             "</html>";
         });
-        Spark.get("/user", (request, response) -> {
-                return "<html>" +
-                        "<form action=\"/user\">" +
-                        "<input name=\"Name\">" +
-                        "<input name=\"Surname\">" +
-                        "<input name=\"User ID\">" +
-                        "<input name=\"Password\">" +
-                        "<input type=\"submit\">" +
-                        "</form>" +
-                        "</html>";
-        });
 
+        Spark.get("/form", (request, response) -> {
+            return new ModelAndView(null, "User.ftl");
+        }, new FreeMarkerEngine());
+
+        Spark.get("/user", (request, response) -> {
+            String name = request.queryParams("name");
+            String surname = request.queryParams("surname");
+            String id = request.queryParams("id");
+            String password = request.queryParams("password");
+
+
+            Map<String, Object> model = new HashMap();
+            model.put("name", name);
+            model.put("surname", surname);
+            model.put("id", id);
+            model.put("password", password);
+            return new ModelAndView(model, "User.ftl");
+        }, new FreeMarkerEngine());
 
     }
 }
