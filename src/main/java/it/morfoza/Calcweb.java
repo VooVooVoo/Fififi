@@ -34,7 +34,7 @@ public class Calcweb {
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
 
-            int result = number1a + number2a;
+            int result = Calculator.calculate(number1a, number2a);
 
             Map<String, Object> model = new HashMap();
             model.put("result", result);
