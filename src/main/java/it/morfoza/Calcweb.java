@@ -14,7 +14,7 @@ public class Calcweb {
 
     public static void main(String[] args) {
         String port = System.getenv("PORT");
-        if (port !=null) {
+        if (port != null) {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
@@ -30,16 +30,33 @@ public class Calcweb {
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
+            String operation = request.queryParams("operation");
 
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
+            int result =0;
 
-            int result = Calculator.calculate(number1a, number2a);
+            if (operation.equals("+")) {
+                result = Calculator.add(number1a, number2a);
+            }
+            ;
+            if (operation.equals("-")) {
+                result = Calculator.subtract(number1a, number2a);
+            }
+
+            if (operation.equals("*")) {
+                result = Calculator.multiply(number1a, number2a);
+            }
+
+            if (operation.equals("/")) {
+                result = Calculator.divide(number1a, number2a);
+            }
 
             Map<String, Object> model = new HashMap();
             model.put("result", result);
             model.put("number1", number1);
             model.put("number2", number2);
+            model.put("operation", operation);
             return new ModelAndView(model, "result.ftl");
         }, new FreeMarkerEngine());
 
