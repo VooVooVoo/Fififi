@@ -11,9 +11,14 @@ public class Main {
         System.out.println("2.Substract");
         System.out.println("3.Multiply");
         System.out.println("4.Divide");
+        System.out.println("5.Have sex");
         Scanner input = new Scanner (System.in);
         String name = input.nextLine();
 
+        if (name.equals("5")) {
+            System.out.println("Let's do this!");
+        }
+else {
             System.out.println("How much is x:");
             int x = input.nextInt();
             System.out.println("How much is y:");
@@ -36,6 +41,7 @@ public class Main {
                 System.out.println("Your result of dividing " + x + " by " + y + " is : " + result);
             }
 
+        }
 
     }
 }
