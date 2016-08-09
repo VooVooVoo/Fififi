@@ -1,1 +1,1 @@
-web: java -jar target/Calcweb.jar
+web: java -Dserver.port=$PORT -jar target/my-app-1.0-SNAPSHOT.jar

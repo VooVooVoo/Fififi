@@ -2,9 +2,9 @@ package it.morfoza;
 
 import java.util.Scanner;
 
-public class Main {
+public class CalculatorConsole {
 
-    public static void main(String[] args) {
+    public static void runOnConsole(String[] args) {
 	// write your code here
         System.out.println("Do you want to:");
         System.out.println("1.Add");

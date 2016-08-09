@@ -10,9 +10,9 @@ import java.util.Map;
 /**
  * Created by Wojt on 2016-07-25.
  */
-public class Calcweb {
+public class CalculatorSpark {
 
-    public static void main(String[] args) {
+    public static void runOnConsole(String[] args) {
 
 
 
