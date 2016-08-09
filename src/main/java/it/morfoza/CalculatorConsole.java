@@ -8,7 +8,7 @@ public class CalculatorConsole {
 	// write your code here
         System.out.println("Do you want to:");
         System.out.println("1.Add");
-        System.out.println("2.Substract");
+        System.out.println("2.Subtract");
         System.out.println("3.Multiply");
         System.out.println("4.Divide");
         System.out.println("5.Have sex");
